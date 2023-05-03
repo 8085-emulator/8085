@@ -1,18 +1,12 @@
 #include "ALLHEADER.h"
 #include<string>
 
-bool validAddr(string add)
+bool validAddr(string addr)
 {
-    bool f;
-    for(int i = 0 ; i < add.length() ; i++)
+    for(int i = 0 ; i < addr.length() ; i++)
     {
-        if((add[i] >= '0' && add[i] <= '9')||(add[i] >= 'A' && add[i] <= 'F'))
-            f = true;
-        else
-        {
-            f = false;
-            break;
-        }
+        if(!((addr[i] >= '0' && addr[i] <= '9')||(addr[i] >= 'A' && addr[i] <= 'F')))
+            return false;
     }
-    return f;
+    return true;
 }
