@@ -82,7 +82,7 @@ class emulator8085
                     exit(0);
                 }
             }
-            run(start , mem , seq , flag , reg);
+            runNormal(start , mem , seq , flag , reg);
         }
         void prgFileDebug(char * fname)
         {
