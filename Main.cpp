@@ -23,15 +23,13 @@ class emulator8085
             pc = start;
             if(!validAddr(start))
             {
-                cout<<"Input memory either does not exist or is reserved by the system.\nPlease re-enter the program from a new memory location\nThe program will quit\n"
+                cout<<"Invalid start address.\nThe program will quit." << endl;
                 exit(1);
             }
             seq.push_back(start);
         }
         void debug()
         {
-            cin.ignore();
-            execute obj;
             cout << "\nStart writing your code :\n";
             while(1)
             {
@@ -55,7 +53,7 @@ class emulator8085
                     exit(0);
                 }
             }
-            obj.runDebug(start , mem , seq , flag , reg);
+            runDebug(start , mem , seq , flag , reg);
         }
         void prgFile(char * file)
         {
@@ -63,9 +61,7 @@ class emulator8085
         }
         void normalInput()
         {
-            cin.ignore();
             string line;
-            execute obj;
             cout << "Start writing your code :" << endl;
             while(1)
             {
@@ -86,7 +82,7 @@ class emulator8085
                     exit(0);
                 }
             }
-            obj.run(start , mem , seq , flag , reg);
+            run(start , mem , seq , flag , reg);
         }
         void prgFileDebug(char * fname)
         {
