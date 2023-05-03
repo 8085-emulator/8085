@@ -30,9 +30,9 @@ string updatedAddr(string pc , map<string , string> &mem)
     for(int j = 0 ; j < 4 ; j++)
     {
       if(a[j] >= 0 && a[j] <= 9)
-        res += char('0' + a[i]);
+        res += char('0' + a[j]);
       else
-        res == char('A' + (a[i] - 10));
+        res == char('A' + (a[j] - 10));
     }
     mem[res] = mem[pc];
     pc = res;
