@@ -2,10 +2,10 @@
 #include "functions.h"
 void STA (string arg1,string register[],bool flag[],map<string,string> &mem)
 {
-	int l1=arg1.length();
-	if(l1==4)
+	int l=arg1.length();
+	if(l==4)
 	{
-		if(validityAddr(arg1))
+		if(validAddr(arg1))
 			mem[arg1]=register[0];
 		else
 		{
