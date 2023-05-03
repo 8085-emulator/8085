@@ -3,7 +3,7 @@
 #include <fstream>
 #include <set>
 
-void runNormal(string pc , map < string , string > &mem , vector<string>&seq bool flag[] , string reg[])
+void runNormal(string pc , map < string , string > &mem , vector<string>&seq , bool flag[] , string reg[])
 {
       for(int i = 0 ; i < seq.size() ; i++)
       {
