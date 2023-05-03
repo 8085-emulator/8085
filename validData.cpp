@@ -9,7 +9,7 @@ bool isHex(char c)
 
 bool validData(string s)
 {
-    if((s.length() == 2) && isHex(s[0]) && isHex(a[1]))
+    if((s.length() == 2) && isHex(s[0]) && isHex(s[1]))
         return true;
     return false;
 }
