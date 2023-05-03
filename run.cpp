@@ -10,10 +10,9 @@ string run(string command , string reg[] , bool flag[] , map < string , string >
     vector<string> cmd;
     string str;
     int cmdSize;
-    const char *partition = command.c_str();
-    char *temp = (char *)partition;
-    const char * delimiter = " ,";
-    char *part = strtok(temp , delimiter);
+     char *partition = command.c_str(); 
+     char * delimiter = " ,";
+    char *part = strtok(partition , delimiter);
   
     while(part != NULL)
     {
