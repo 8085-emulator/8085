@@ -1,10 +1,11 @@
 #include"ALLHEADER.h"
-void XCHG (string register[],bool flag[])
+void XCHG (string reg[],bool flag[])
 {
-	string temp=register[3];
-	register[3]=register[5];
-	register[5]=temp;
-	temp=register[4];
-	register[4]=register[6];
-	register[6]=temp;
+	string temp = reg[3];
+	reg[3] = reg[5];
+	reg[5] = temp;
+	
+	temp = reg[4];
+	reg[4] = reg[6];
+	reg[6] = temp;
 }
