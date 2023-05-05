@@ -1,21 +1,21 @@
 #include "ALLHEADER.h"
 #include "functions.h"
-void STA (string arg1,string register[],bool flag[],map<string,string> &mem)
+
+void STA(string arg1 , string reg[] , bool flag[] , map <string , string> &mem)
 {
-	int l=arg1.length();
-	if(l==4)
+	if(arg1.length() == 4)
 	{
 		if(validAddr(arg1))
-			mem[arg1]=register[0];
+			mem[arg1]=reg[0];
 		else
 		{
-			cout<<"Error: "<<arg1<<"\nInvalid address\n";
+			cout<<"Error: Invalid address." << endl;
 			exit(0);
 		}
 	}
 	else
 	{
-		cout<<"Error: "<<arg1<<"\nInvalid arguments\nThe program will quit\n";
+		cout<<"Error: Invalid arguments\nThe program will quit\n";
 		exit(0);
 	}
 }
