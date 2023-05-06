@@ -13,7 +13,7 @@ void CMA(string reg[],bool flags[])
     {
         string temp = reg[0];
 		int array[2];
-		hexToDecimal(temp,array);
+		hexToDec(temp,array);
 		int value=array[1]*16+array[0];
 		bitset<8> dataInBinary(value);
 		int parity = dataInBinary.count();
