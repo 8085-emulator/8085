@@ -5,7 +5,7 @@ void STAX(string arg1 , string reg[] , bool flag[] , map <string , string> &mem)
 {
     if(arg1.length() == 4 && validRp(arg1))
     {
-        string a += reg[regNo(arg)] + reg[regNo(arg) + 1];
+        string a = reg[regNo(arg)] + reg[regNo(arg) + 1];
         if(validAddr(a))
             mem[a] = reg[0];
         else
