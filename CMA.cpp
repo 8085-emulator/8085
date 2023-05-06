@@ -2,8 +2,8 @@
 #include "functions.h"
 void CMA(string reg[],bool flags[])
 {
-	string compliment = complement(reg[0]);
-	reg[0] = compliment;
+	string complmt = complement(reg[0]);
+	reg[0] = complmt;
 	if(reg[0]=="00")
     {
         flags[6] = true;
