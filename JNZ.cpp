@@ -32,6 +32,6 @@ string JNZ(string arg, string pc, string Registers[],bool flag[]){
 			cout<<"Error: "<<arg<<"\nAddress overflow\Quit\n";
 				exit(0);
 			}
-			/*Error - Address over-flow*/
+			
 	}
 }
