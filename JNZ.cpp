@@ -13,7 +13,7 @@ string JNZ(string arg, string pc, string Registers[],bool flag[]){
 		int value16bit[4];
 		int returnValue[] = {0,0,0,3};
 		int carry = 0;
-		hexToDecimal(pc,value16bit);	  
+		hexToDec(pc,value16bit);	  
 		for(int i = 3;i>=0;i--){
 					
 			int value = value16bit[i] + returnValue[i] + carry;
@@ -25,11 +25,11 @@ string JNZ(string arg, string pc, string Registers[],bool flag[]){
 				resultant = (char)('A'+(value-10)) + resultant;
 			}
 		}
-		if(validityAddress(resultant))
+		if(validAddr(resultant))
 			return resultant;
 		else
 		{
-			cout<<"Error: "<<arg<<"\nAddress overflow\nThe program will quit\n";
+			cout<<"Error: "<<arg<<"\nAddress overflow\Quit\n";
 				exit(0);
 			}
 			/*Error - Address over-flow*/
