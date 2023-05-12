@@ -1,3 +1,7 @@
+#include "ALLHEADER.h"
+#include <fstream>
+#include "functions.h"
+#include "execute.h"
 
 class emulator8085
 {
@@ -24,7 +28,7 @@ class emulator8085
             if(!validAddr(start))
             {
                 cout<<"Invalid start address.\nThe program will quit." << endl;
-                exit(1);
+                exit(0);
             }
             seq.push_back(start);
         }
@@ -55,9 +59,36 @@ class emulator8085
             }
             runDebug(start , mem , seq , flag , reg);
         }
-        void prgFile(char * file)
+        void prgFile(char * fname)
         {
-
+            ifstream input;
+            execute obj;
+            input.open(fname);
+            if(input.fail() == true)
+            {
+				cout<<"Invalid filename.\nThe prorgam will quit\n";
+			    exit(0);
+    		}
+            string line;
+            while(1)
+            {
+                getline(input,line);
+                if(validFile(line))
+                {
+                    mem[pc] = line;
+                    pc=updatedAddr(pc , mem);
+                    if(line=="HLT")
+	    				break;
+                    seq.push_back(pc);
+       			}
+                else
+                {
+					cout<<"Error: "<<line<<"\n";
+				    cout<<"You have entered an incorrect statement\nThe program will quit\n"<<endl;
+    				exit(0);
+	    		}
+            }
+            obj.runNormal(start , mem , seq , flag , reg);
         }
         void normalInput()
         {
@@ -86,7 +117,34 @@ class emulator8085
         }
         void prgFileDebug(char * fname)
         {
-
+            ifstream input;
+            execute obj;
+	    	input.open(fname);
+		    if(input.fail() == true)
+            {
+				cout << "Invalid filename.\nThe prorgam will quit\n";
+			    exit(0);
+    		}
+	    	string line;
+    		while(1)
+	    	{
+		        getline(input,line);
+    			if(validFile(line))
+    			{
+                    mem[pc]=line;
+    				pc=updatedAddr(pc,mem);
+    				if(line=="HLT")
+	    				break; 
+    				seq.push_back(pc);
+    			}
+	    		else
+                {
+					cout << "Error : "<<line<<"\n";
+    				cout << "You have entered an incorrect statement.\nThe program will quit\n"<<endl;
+	    			exit(0);
+	    		}
+    		}
+    		obj.runDebug(start , mem , seq , flag , reg);
         }
 };
 
