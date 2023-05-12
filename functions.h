@@ -1,23 +1,23 @@
 #ifndef _FUNCTIONS_H
 #define _FUNCTIONS_H
 
-bool addIsValid(string);
+bool validAddr(string);
 string hexAdd(string,string,bool[],bool);
 string hexSub(string,string,bool[],bool);
 string hexAdd16bit(string,string,bool[],bool);
 string hexSub16bit(string,string,bool[],bool);
-void hexToDecimal(string,int[]);
-bool validityRegisters(string);
-bool validityRegisterPair(string);
-bool validityData(string);
-bool validityHexadecimal(string);
-int registerNumber(string);
-bool validityFile(string);
-string increaseAddress(string);
+void hexToDec(string,int[]);
+bool validReg(string);
+bool validRp(string);
+bool validData(string);
+bool validHex(string);
+int regNo(string);
+bool validFile(string);
+string incrAddr(string);
 string complement(string);
 string decimalToHex(int[]);
-int operationSize(string);
-string execution(string, string[], bool[], map<string,string>&,string);
-string updatedAddress(string,map<string,string>&);
+int opSize(string);
+string run(string, string[], bool[], map<string,string>&,string);
+string updatedAddr(string,map<string,string>&);
 
 #endif
