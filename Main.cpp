@@ -1,7 +1,7 @@
 #include "ALLHEADER.h"
 #include <fstream>
 #include "functions.h"
-#include "execute.h"
+#include "execute.cpp"
 
 class emulator8085
 {
